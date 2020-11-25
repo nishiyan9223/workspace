@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>jQueryの練習</title>
+    <style>
+      .mystyle {
+        border: 5px solid green;
+        font-size: 48px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>jQueryの練習</p>
+    <ul id="main">
+      <li>0</li>
+      <li class="item">1</li>
+      <li class="item">2</li>
+      <li>
+        3
+        <ul id="sub">
+          <li>3-0</li>
+          <li>3-1</li>
+          <li class="item">3-2</li>
+          <li class="item">3-3</li>
+          <li>3-4</li>
+        </ul>
+      </li>
+    </ul>
+    <br>
+    <p><a href="http://google.com" data-sitename="google">Google</a></p>
+    <p><a href="http://yahoo.co.jp">Yahoo</a></p>
+    <p><a href="http://dotinstall.com">Dotinstall</a></p>
+    <div class="zero">zero</div>
+    <input type="text" value="80">
+    <span>aaaaaaaaaa</span>
+    <br>
+    <ul id="list">
+      <li>0</li>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+      // $(document).ready(function() { 省略できる
+      $(function() {
+        // セレクタ: 処理対象となるDOM要素を指定する記法
+        // メソッド: 処理
+        // メソッドチェーン
+        // セレクタ '>' ' ' ',' '+'
+        // > 直下の要素
+        //   それ以外の要素
+        // , 複数の要素
+        // + 隣接する要素
+
+        // $('p').css('color', 'red').hide('slow');
+        // $('#main > .item').css('color', 'skyblue');
+
+        // フィルタ
+        // :eq() その値
+        // :gt() より大きい, :lt() より小さい
+        // :even 偶数, :odd 奇数
+        // :contains() 中身を探索
+        // :first 一番上, :last 一番下
+
+        // $('#sub > li:contains(4)').css('color', 'orange');
+
+        // メソッドを使った要素の指定
+        // parent(), children()
+        // next(), prev()
+        //siblings() - 兄弟要素
+        // $('#sub').parent().css('color', 'red');
+        // $('#sub > li:eq(2)').prev().css('color', 'red');
+        // $('#sub > li:eq(2)').siblings().css('color', 'red');
+
+        // 属性セレクタ
+        // = !=
+        // *= 含まれる
+        // ^= 先頭が？である
+        // $= 最後が？である
+        // $('a[href="http://google.com"]').css('background', 'red');
+        $('a[href*="http://google.com"]').css('background', 'red');
+
+      });
+    </script>
+    <script>
+      $(function() {
+        // .css 値の設定・取得
+        $('p:first').css('color', 'red').css('background', 'skyblue');
+        console.log($('p').css('color'));
+        // addClass removeClass
+        $('p:last').addClass('mystyle');
+        $('p:last').removeClass('mystyle');
+        // attr 属性の値の設定・取得
+        console.log($('p:eq(1) a').attr('href'));
+        $('p:eq(2) a').attr('href', 'http://dotinstall.com');
+        // data htmlのカスタム属性の設定・取得
+        $('p:eq(1) a').data('sitename', 'yahoo')
+        console.log($('p:eq(1) a').data('sitename'));
+
+      });
+    </script>
+    <script>
+      $(function() {
+        // text テキストの書き換え
+        // html html要素の埋め込み
+        // val  valueの設定・取得
+        // remove 要素の削除
+        // empty　要素の中身の削除
+        // $('.zero').text('one');
+        $('.zero').html('<a href="">click me!</a>');
+        console.log($('input').val());
+        $('input').val('1000');
+        $('span').remove();
+
+        // before, after -> insertBefore, insertAfter　要素の前後に追加
+        // prepend, append -> prependTo, appendTo 子要素の先頭・末尾に追加
+        var li = $('<li>').text('just!');
+        // $('#list li:eq(1)').before(li);
+        // li.insertBefore($('#list li:eq(1)')); 同じ書き方ができる
+        $('#list').prepend(li);
+        li.appendTo($('#list'));
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScriptの練習</title>
+  </head>
+  <body>
+    <!--
+      データ型
+        文字列
+        数値
+        真偽値(true/false)
+        オブジェクト
+          配列
+          関数
+          組み込みオブジェクト
+        undefined 定義されていない
+        null 何もない
+    -->
+    <script src="myscript.js"></script> <!-- 外部ファイルの読み込み　-->
+    <script>
+      /*
+        === ==
+        !== !=
+      */
+
+      /*
+        真偽値
+          文字列:  空文字以外だったらtrue
+          数値: 0 か　NaN　以外だったらtrue
+          true　/　false
+          object: null 以外だったらtrue
+          undefined, null -> false
+      */
+
+      /*
+        三項演算子
+          a = (条件) ? b : c;
+      */
+    </script>
+    <script>
+      // alert("hello");
+      // var ans = confirm("are you sure?");
+      //console.log(ans);
+      // var name = prompt("お名前は？","名無しさん");
+      //console.log(name);
+    </script>
+    <script>
+      /*
+      function hello(name) {
+        console.log("hello" + name);
+      }
+
+      var hello = function(name) { //無名関数、匿名関数
+        console.log("hello" + name);
+      };
+      hello("Lisa");
+      hello("Bob");
+      */
+    </script>
+    <script>
+      /*即時関数
+      (function(name) {
+        console.log("hello" + name);
+      })("Tom");
+      */
+
+      /*(function() {
+        var x = 10, y = 20;
+        console.log(x + y);
+      })();*/
+    </script>
+    <script>
+      /*
+        タイマー処理
+          setInterval
+          setTimeout
+      */
+      /*
+      var i = 0;
+      function show() {
+        console.log(i++);
+        var tid = setTimeout(function() {
+          show();
+        }, 1000);
+        if(i > 3) {
+          clearTimeout(tid);
+        }
+      }
+      show();
+      */
+      /*
+      setInterval(function() {
+        show();
+      }, 1000);
+      */
+    </script>
+    <script>
+      /*var score = [100, 300, 500, "nishiyan"];
+      console.log(score[0]);
+      console.log(score);
+      */
+      /*var m = [
+        [1, 2, 3],
+        [4, 5, 6]
+      ];
+      console.log(m[1][0]);*/
+    </script>
+    <script>
+      // var user = {
+      //   email: "nishiyan@gmail.com", //プロパティ
+      //   score: 80,
+      //   greet: function(name) { //メソッド
+      //     console.log("hello, " + name + " from " + this.email);
+      //   }
+      // };
+      // console.log(user["email"]);
+      // console.log(user.email);
+      // user.score = 100;
+      // console.log(user);
+      // user.greet("Tom");
+    </script>
+    <script>
+      /*
+        組み込みオブジェクト
+          String
+          Array
+          Math
+          Date
+      */
+      /*
+      var s = new String("nishiyan");　文字列オブジェクト
+      var s = "nishiyan"; 文字列リテラル
+      console.log(s.length);
+      console.log(s.replace("nishiyan","taguchi"));
+      console.log(s.substr(2,2));
+      文字列リテラルにメソッドを使おうとするとjavascriptが補完し、文字列オブジェクトに変更する　*/
+    </script>
+    <script>
+      var a = new Array(100,200,300);
+      //var a = [100,200,300];
+      console.log(a.length);
+      /*要素を変更するメソッド
+        unshift -> 先頭へ追加   push -> 末尾へ追加
+        shift -> 先頭から除去   pop -> 末尾から除去
+      */
+      a.push(500);
+      a.splice(1,2,800,1000); //要素を途中から削除する　-> 要素を追加で記述すると削除した位置から追加する
+      console.log(a);
+    </script>
+    <script>
+      console.log(Math.PI);
+      console.log(Math.ceil(5.3)); //切り上げ
+      console.log(Math.floor(5.3)); //切り下げ
+      console.log(Math.round(5.3)); //四捨五入
+      console.log(Math.random()); //0~1の実数をランダムで生成する
+
+      var d = new Date();
+      //var d = new Date(2014, 1, 23, 10, 20, 30); 月は0から始まる
+      console.log(d);
+      console.log(d.getFullYear()); //年
+      console.log(d.getMonth()); //月
+      console.log(d.getTime()); //1970/1/1からの経過ミリ秒
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;;
